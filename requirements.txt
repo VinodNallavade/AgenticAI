@@ -12,3 +12,7 @@ faiss-cpu
 
 # Azure
 azure-identity
+
+
+#VectorDbs
+langchain-pinecone
