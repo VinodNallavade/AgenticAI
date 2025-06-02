@@ -16,3 +16,7 @@ azure-identity
 
 #VectorDbs
 langchain-pinecone
+
+#loaders
+pypdf
+unstructured

@@ -1,0 +1,2 @@
+DocumentLoaders load data into the standard LangChain Document format.
+Each DocumentLoader has its own specific parameters, but they can all be invoked in the same way with the .load method. 

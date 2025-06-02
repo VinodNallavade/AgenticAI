@@ -21,7 +21,7 @@ if not os.getenv("PINECONE_API_KEY"):
 
 unique_id = uuid4().hex[0:8]
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = f"Tracing Walkthrough - {unique_id}"
+os.environ["LANGCHAIN_PROJECT"] = f"AgenticAI2.0"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")  # Update to your API key
 
