@@ -20,3 +20,12 @@ langchain-pinecone
 #loaders
 pypdf
 unstructured
+azure-storage-blob
+unstructured[docx]
+
+
+
+## Tool Calling
+wikipedia
+youtube_search
+langchain_tavily 
