@@ -29,3 +29,6 @@ unstructured[docx]
 wikipedia
 youtube_search
 langchain_tavily 
+
+## LangGraph
+langgraph
