@@ -18,15 +18,10 @@ tool=WikipediaQueryRun(api_wrapper=apiWrapper)
 response=tool.invoke(input= "RCB")
 print(response)
 
-
-
-
 ## Youtube tool
 youtubetool= YouTubeSearchTool()
 youtuberesponse=youtubetool.run("IaminAzure")
 print(youtuberesponse)
-
-
 
 ## Tavily Tool
 tavily_tool = TavilySearch(
