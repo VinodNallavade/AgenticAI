@@ -22,6 +22,7 @@ pypdf
 unstructured
 azure-storage-blob
 unstructured[docx]
+langchain_chroma
 
 
 
@@ -32,3 +33,7 @@ langchain_tavily
 
 ## LangGraph
 langgraph
+
+
+
+libmagic

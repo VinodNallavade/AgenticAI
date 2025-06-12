@@ -1,3 +1,58 @@
-LangChain is a powerful framework for integrating Large Language Models in application development.
-This is a sample text file for testing purposes.
-Unstructured data can be loaded easily using the UnstructuredFileLoader.
+What is FOCUS?
+The FinOps Open Cost and Usage Specification (FOCUS) is a groundbreaking initiative to define a common format for billing data. It empowers organizations to better understand cost and usage patterns and optimize spending and performance across multiple cloud, SaaS, and even on-premises service offerings.
+
+FOCUS provides organizations with a consistent, clear, and accessible view of their cost data explicitly designed for FinOps needs such as allocation, analytics, monitoring, and optimization. As the new "language" of FinOps, FOCUS enables practitioners to collaborate more efficiently and effectively with peers throughout the organization. It helps maximize transferability and onboarding for new team members, getting people up and running quicker. When paired with the FinOps Framework, practitioners have the tools needed to build a streamlined FinOps practice that maximizes the value of the cloud.
+
+
+Why FOCUS?
+The variety and flexibility of Microsoft cloud services allows you to build amazing things while only paying for what you need, when you need it. And with this flexibility comes varying operational models where services are billed and can be tuned differently based on various factors. When services are billed differently, their cost and usage data tends to differ as well. It makes it challenging to allocate, analyze, monitor, and optimize consistently. It goes beyond just Microsoft’s cloud services. Organizations often rely on software as a service (SaaS) products, licensed software, on-premises infrastructure, or even other clouds. That reliance exacerbates the problem with each provider sharing data in proprietary formats.
+
+FOCUS solves this problem by establishing a provider- and service-agnostic data specification that addresses some of the biggest challenges organizations face in managing the value of their cloud investments – understanding and quantifying the business value of their spending. FOCUS enables organizations to spend more time driving value and less struggling to understand data caused by inconsistencies between and unfamiliarity with different services and providers. But FOCUS isn't just for organizations using multiple cloud providers.
+
+FOCUS can assist organizations that:
+
+Use a single cloud provider along with complementary service providers.
+Have multiple accounts within one cloud provider.
+Have just one account with a single cloud provider.
+The benefits of using FOCUS are wide-reaching, from streamlined operations within an enterprise to making skills as a FinOps practitioner more portable.
+
+
+Benefits
+FOCUS is the best version of cost and usage data you can get from Cost Management. Some of the benefits you see with FOCUS compared to actual and amortized cost data include:
+
+Save 30% on storage and compute costs
+
+FOCUS combines actual (billed) and amortized (effective) costs in a single row, which results in 49% fewer rows compared to actual and amortized datasets together. When you consider the new FOCUS columns, the total data size is ~30% smaller than actual and amortized datasets, which is a direct savings on storage costs. You also save on compute costs since fewer rows get processed. Exact compute savings vary, depending on your solution.
+Designed to handle multiple accounts and clouds
+
+If you use multiple clouds or have different account types within a single cloud (like EA and MCA), FOCUS standardizes your cost data into a single schema with consistent terminology. It helps to understand and optimize your costs across all your accounts. For organizations still on EA, switching to FOCUS now puts you in control of timing so you're not "offline" after your account is transitioned to MCA.
+Easier to learn and aligned with the FinOps Framework
+
+FOCUS is the new "language" of FinOps. All FinOps Framework guidance is updated to use FOCUS terminology and also include FOCUS queries and examples. FOCUS makes it easier to understand and implement FinOps best practices without requiring an extra layer of translation from cloud-agnostic guidance to cloud-specific implementation details. FOCUS enables cloud-agnostic patterns and guidance to go deeper and help you accomplish more with less effort.
+Clean, human-readable display names
+
+FOCUS uses clean, human-readable display names for all names, types, and categories. Friendly display names are available for services, resource types, regions, pricing, commitment discounts, and more.
+Uniquely identify the exact price-point
+
+FOCUS includes an identifier for the specific SKU price-point used for each charge (SkuPriceId). It's a unique identifier for the SKU inclusive of all pricing variations, like tiering and discounts, which isn't currently available in actual or amortized datasets. Each charge also includes the unit prices you need to understand how you get or how you might be charged. List (or retail) unit price is what you would pay per unit without any negotiated discounts. Your contracted (or on-demand) unit price is after negotiated discounts are applied. Your effective (or amortized) unit price shows the conceptual price after prepurchase commitment discounts were applied. Your billed (or actual) unit price represents what was or what gets invoiced.
+Easier to quantify cost savings
+
+In addition to unit prices, FOCUS also includes columns to identify the specific pricing model used for each charge with list, contracted, effective, and billed cost which makes it easier to quantify cost savings from negotiated and commitment discounts.
+All prices and costs in a consistent currency
+
+FOCUS uses the billing currency for all prices and costs, which makes it easier to verify costs within the cost and usage data. It differs from the prices in the native Cost Management datasets, which use the pricing currency.
+Organize and differentiate costs by service, resource, and SKU
+
+FOCUS clearly delineates between services, resources, and SKUs, which makes it easier to organize and differentiate costs. Service categorization is consistent across providers and offers a new perspective as it groups all resources consumed for a specific service together, regardless of the underlying product or SKU (for example, bandwidth and compute costs both fall under the Virtual Machines service).
+More consistent regions
+
+The FOCUS dataset in Cost Management provides an extra layer of data cleansing to ensure regions are consistent with Azure Resource Manager. This means you see the same region names in FOCUS as you do in the Azure portal and Azure Resource Manager APIs.
+Simpler date logic
+
+FOCUS uses exclusive end dates and industry standard ISO 8601 date formats for billing and charge periods. It helps make it easier to filter and compare dates. It's especially useful when comparing to other dates, like the current date, since you don't have to guess about time zones or time of day.
+Tags and SKU details are provided in a consistent JSON format
+
+If you have an Enterprise Agreement account, you might know that tags aren't formatted as JSON in actual and amortized datasets. FOCUS fixes this issue by providing tags and SKU details (AdditionalInfo) in a consistent JSON format.
+Identify and break usage down to discrete units
+
+FOCUS provides discrete pricing and usage units for each charge to help you understand how you're being charged compared to real-world usage units. It accounts for different pricing strategies like block pricing and makes it easier to verify pricing and usage quantities by providing data in separate columns.

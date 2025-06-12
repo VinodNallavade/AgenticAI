@@ -16,16 +16,16 @@ tool=WikipediaQueryRun(api_wrapper=apiWrapper)
 #print(tool.description)
 #print(tool.args)
 response=tool.invoke(input= "RCB")
-print(response)
+#print(response)
 
 ## Youtube tool
 youtubetool= YouTubeSearchTool()
 youtuberesponse=youtubetool.run("IaminAzure")
-print(youtuberesponse)
+#print(youtuberesponse)
 
 ## Tavily Tool
 tavily_tool = TavilySearch(
-    max_results=5,
+    max_results=1,
     topic="general",
     tavily_api_key = tavily_apikey
     # include_answer=False,
@@ -39,4 +39,4 @@ tavily_tool = TavilySearch(
 )
 
 tavily_response= tavily_tool.invoke({"query": "What s the latest trending news"})
-print(tavily_response)
+print(tavily_response["results"][0]["content"])
