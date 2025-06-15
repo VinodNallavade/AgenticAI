@@ -30,10 +30,19 @@ langchain_chroma
 wikipedia
 youtube_search
 langchain_tavily 
+duckduckgo-search
+pyowm
+
 
 ## LangGraph
 langgraph
 
-
+yfinance
 
 libmagic
+
+
+amadeus
+
+
+streamlit
