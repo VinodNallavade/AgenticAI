@@ -14,4 +14,4 @@ This project demonstrates a smart travel assistant built using **LangGraph** wit
 
 
 
-
+![alt text](image.png)
