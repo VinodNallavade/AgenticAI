@@ -15,12 +15,12 @@ api_secret=os.getenv("AMADEUS_CLIENT_SECRET")
 client = Client(client_id=api_key, client_secret=api_secret)
 
 
-@tool
-def multiply(a: int, b: int) -> int:
-    """Multiply two integers."""
-    return a * b
 
-@tool
+
+
+
+
+@tool(return_direct=True)
 def get_city_attractions(city: str) -> str:
         """
         Fetches tourist attractions for a city using Amadeus API.
@@ -53,3 +53,5 @@ def get_city_attractions(city: str) -> str:
         except ResponseError as e:
             logger.error(f"Attraction lookup failed: {e}")
             return "Error fetching attractions."
+
+

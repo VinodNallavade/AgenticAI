@@ -3,13 +3,13 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_openai import AzureChatOpenAI
 from langchain_core.messages import BaseMessage
-from tools import multiply, get_city_attractions
+from tools import get_city_attractions
 
 
 class TravelAgent:
     def __init__(self, chat_model):
         self.chat_model = chat_model
-        self.tools = [multiply, get_city_attractions, DuckDuckGoSearchRun()]
+        self.tools = [get_city_attractions, DuckDuckGoSearchRun()]
 
     def llm_node(self, state: MessagesState) -> MessagesState:
         bound_llm = self.chat_model.bind_tools(self.tools)
