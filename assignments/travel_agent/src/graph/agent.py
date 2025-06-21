@@ -3,13 +3,16 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_openai import AzureChatOpenAI
 from langchain_core.messages import BaseMessage
-from tools import get_city_attractions
+from .nodes.attractions import AmedeusCustomWrapper
+from .nodes.weather import openweathermap_custom_wrapper
 
 
 class TravelAgent:
     def __init__(self, chat_model):
         self.chat_model = chat_model
-        self.tools = [get_city_attractions, DuckDuckGoSearchRun()]
+        amedeustools = AmedeusCustomWrapper()
+        weathertools = openweathermap_custom_wrapper()
+        self.tools = [amedeustools.get_city_geocodes,amedeustools.search_attractions,amedeustools.search_restaurants,weathertools.get_city_weather]
 
     def llm_node(self, state: MessagesState) -> MessagesState:
         bound_llm = self.chat_model.bind_tools(self.tools)

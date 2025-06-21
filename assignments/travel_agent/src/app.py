@@ -1,5 +1,5 @@
 import streamlit as st
-from agent import TravelAgent
+from assignments.travel_agent.src.graph.agent import TravelAgent
 from utils import get_azure_openai_model
 
 st.set_page_config(page_title="LangGraph Travel Assistant", layout="centered")
