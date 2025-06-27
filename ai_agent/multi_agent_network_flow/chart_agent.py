@@ -40,15 +40,15 @@ code_agent = create_react_agent(
     prompt="You are a code agent who generates a chart. When done, reply with 'chart complete'."
     )
 
-def chart_node(state: AgentState) -> Command[Literal["search_node",END]]:
+def chart_node(state: AgentState) -> Command[Literal["search_agent_node",END]]:
     print("in chart node")
     result= code_agent.invoke(state)    
     if "FINAL MESSAGE" in result["messages"][-1].content:
         return Command(goto=END,update={"messages" : state.messages,})
     elif "chart complete" in result["messages"][-1].content.lower():
-        return END
+        return Command(goto=END,update={"messages" : state.messages,})
     state.messages[-1]=HumanMessage(
         content=result["messages"][-1].content
     )
     state.sender="chart_node"       
-    return Command(goto="search_node",update={"messages" : state.messages,})
+    return Command(goto="search_agent_node",update={"messages" : state.messages,})

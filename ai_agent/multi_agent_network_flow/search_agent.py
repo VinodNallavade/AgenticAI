@@ -52,7 +52,7 @@ search_agent = create_react_agent(
     prompt="You are a research-only agent. When you find data, output it and say **handover to chart agent**."
     )
 
-def search_node(state: AgentState) -> Command[Literal["chart_node", END]]:
+def search_node(state: AgentState) -> Command[Literal["chart_agent_node", END]]:
     print(f"in search node state : {state}")
     result= search_agent.invoke(state) 
     print(result)       
@@ -63,10 +63,10 @@ def search_node(state: AgentState) -> Command[Literal["chart_node", END]]:
         content=result["messages"][-1].content
         )
         state.sender="search_node"
-        return Command(goto="chart_node",update={"messages" : state.messages,})
+        return Command(goto="chart_agent_node",update={"messages" : state.messages,})
     else :
         state.messages[-1]=HumanMessage(
         content=result["messages"][-1].content
         )
         state.sender="search_node"
-        return Command(goto="chart_node",update={"messages" : state.messages,})
+        return Command(goto="chart_agent_node",update={"messages" : state.messages,})
