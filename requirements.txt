@@ -23,7 +23,7 @@ unstructured
 azure-storage-blob
 unstructured[docx]
 langchain_chroma
-
+langchain_experimental
 
 
 ## Tool Calling
@@ -46,3 +46,4 @@ amadeus
 
 
 streamlit
+matplotlib
