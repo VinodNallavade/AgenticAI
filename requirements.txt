@@ -24,6 +24,7 @@ azure-storage-blob
 unstructured[docx]
 langchain_chroma
 langchain_experimental
+langchain_groq
 
 
 ## Tool Calling
